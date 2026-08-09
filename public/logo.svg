@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 160" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap');
+      .serif-bold { font-family: 'Playfair Display', 'Georgia', serif; font-weight: 700; fill: #0F2B5C; }
+      .serif-light { font-family: 'Playfair Display', 'Georgia', serif; font-weight: 400; fill: #64748B; }
+      .sub-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; fill: #0F2B5C; letter-spacing: 4.5px; }
+    </style>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2B5C"/>
+      <stop offset="100%" stop-color="#081C42"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Icon Group -->
+  <g transform="translate(10, 5) scale(0.75)">
+    <!-- Main Navy X Diagonal -->
+    <path d="M 50 15 L 95 15 L 155 105 L 140 145 Z" fill="url(#navyGrad)"/>
+    <path d="M 50 15 L 125 125 L 85 175 L 20 175 Z" fill="url(#navyGrad)"/>
+    
+    <!-- Top Right Gray Stroke -->
+    <polygon points="110,15 160,15 120,78 85,78" fill="#7E8388"/>
+    
+    <!-- Sweeping Arc Curve -->
+    <path d="M 15 175 C 60 160, 120 120, 205 35 C 175 90, 120 145, 30 172 Z" fill="url(#navyGrad)"/>
+    
+    <!-- Bar Chart Columns -->
+    <rect x="135" y="115" width="18" height="60" rx="2" fill="url(#navyGrad)"/>
+    <rect x="160" y="90" width="18" height="85" rx="2" fill="url(#navyGrad)"/>
+  </g>
+
+  <!-- Typography -->
+  <!-- "Xedge" in Dark Navy Serif -->
+  <text x="185" y="82" class="serif-bold" font-size="64">Xedge</text>
+  
+  <!-- "Global Ltd" in Slate Gray Light Serif -->
+  <text x="375" y="82" class="serif-light" font-size="64">Global Ltd</text>
+  
+  <!-- Subtitle & Flanking Lines -->
+  <line x1="185" y1="110" x2="235" y2="110" stroke="#0F2B5C" stroke-width="1.5"/>
+  <text x="415" y="115" class="sub-text" text-anchor="middle">ACCOUNTING • ADVISORY • SOLUTIONS</text>
+  <line x1="595" y1="110" x2="645" y2="110" stroke="#0F2B5C" stroke-width="1.5"/>
+</svg>

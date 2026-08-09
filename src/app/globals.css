@@ -1,26 +1,203 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-primary: #0f2b5c;
+  --navy-dark: #06142e;
+  --navy-midnight: #0b0f19;
+  --purple-accent: #4f46e5;
+  --purple-bright: #6366f1;
+  --slate-dark: #1e293b;
+  --slate-body: #475569;
+  --slate-light: #94a3b8;
+  --bg-light: #ffffff;
+  --bg-soft: #f8fafc;
+  --border-light: #e2e8f0;
+  --accent-blue: #2563eb;
+  --cyan-glow: #38bdf8;
+  --emerald: #10b981;
+  --gold: #f59e0b;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --shadow-sm: 0 4px 14px -4px rgba(15, 43, 92, 0.1);
+  --shadow-md: 0 12px 30px -10px rgba(15, 43, 92, 0.16);
+  --shadow-lg: 0 24px 55px -20px rgba(79, 70, 229, 0.28);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy-primary);
+  --color-navy-dark: var(--navy-dark);
+  --color-navy-midnight: var(--navy-midnight);
+  --color-purple: var(--purple-accent);
+  --color-purple-bright: var(--purple-bright);
+  --color-slate-dark: var(--slate-dark);
+  --color-slate-body: var(--slate-body);
+  --color-slate-light: var(--slate-light);
+  --color-bg-soft: var(--bg-soft);
+  --color-border-light: var(--border-light);
+  --color-accent-blue: var(--accent-blue);
+  --color-cyan-glow: var(--cyan-glow);
+  --color-emerald: var(--emerald);
+  --color-gold: var(--gold);
+
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  Wrapped in @layer base so these element defaults sit in the same cascade
+  layer as Tailwind's own base styles. Tailwind's utility classes (e.g.
+  text-white) live in @layer utilities, which comes after @layer base — but
+  CSS cascade layers are resolved before specificity, so any UNLAYERED rule
+  here would beat a utility class regardless of specificity. Keeping these
+  layered lets `className="text-white"` etc. actually override h1's default
+  color as expected.
+*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg-light);
+    color: var(--slate-body);
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    color: var(--slate-dark);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--purple-accent);
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Marquee ticker */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-scroll 32s linear infinite;
+}
+
+/* Radar pulse (phone widget) */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.animate-radar::before,
+.animate-radar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--emerald);
+  animation: radar-pulse 2.2s var(--ease-smooth) infinite;
+}
+.animate-radar::after {
+  animation-delay: 1.1s;
+}
+
+/* Custom range slider (ROI calculators) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border-light);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--purple-accent);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.5);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--purple-accent);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.5);
+  cursor: pointer;
+}
+
+/* Form inputs */
+.input {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--slate-dark);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.input::placeholder {
+  color: var(--slate-light);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--purple-accent);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-light);
+  border-radius: 999px;
 }
