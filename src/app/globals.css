@@ -115,6 +115,32 @@
   animation: marquee-scroll 32s linear infinite;
 }
 
+/* Contact section decorative blobs */
+@keyframes contact-drift-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 24px) scale(1.08);
+  }
+}
+@keyframes contact-drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-24px, -30px) scale(1.06);
+  }
+}
+.animate-contact-drift-1 {
+  animation: contact-drift-1 24s ease-in-out infinite;
+}
+.animate-contact-drift-2 {
+  animation: contact-drift-2 28s ease-in-out infinite;
+}
+
 /* Radar pulse (phone widget) */
 @keyframes radar-pulse {
   0% {

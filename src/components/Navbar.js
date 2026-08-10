@@ -31,8 +31,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-white/85 backdrop-blur-xl ${
-          scrolled ? "shadow-[0_4px_24px_rgba(15,43,92,0.1)]" : ""
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(15,43,92,0.1)]"
+            : "bg-transparent"
         }`}
       >
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
@@ -43,7 +45,9 @@ export default function Navbar() {
                 alt="Xedge Global"
                 width={160}
                 height={50}
-                className="h-9 md:h-11 w-auto object-contain"
+                className={`h-9 md:h-11 w-auto object-contain transition-all duration-500 ${
+                  scrolled ? "" : "brightness-0 invert"
+                }`}
                 priority
               />
             </Link>
@@ -57,14 +61,18 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={`relative py-2 text-sm font-semibold tracking-wide transition-colors ${
-                      active ? "text-purple" : "text-slate-dark hover:text-purple"
+                      active
+                        ? "text-purple-bright"
+                        : scrolled
+                          ? "text-slate-dark hover:text-purple"
+                          : "text-white/90 hover:text-white"
                     }`}
                   >
                     {item.label}
                     {active && (
                       <motion.span
                         layoutId="nav-underline"
-                        className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-purple"
+                        className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-purple-bright"
                       />
                     )}
                   </Link>
@@ -79,14 +87,26 @@ export default function Navbar() {
                   <Phone size={16} className="relative z-10 text-emerald" />
                 </span>
                 <span className="flex flex-col leading-tight">
-                  <span className="text-[11px] text-slate-light">Have a Question?</span>
-                  <span className="text-sm font-bold text-slate-dark">{company.phone}</span>
+                  <span
+                    className={`text-[11px] ${scrolled ? "text-slate-light" : "text-white/60"}`}
+                  >
+                    Have a Question?
+                  </span>
+                  <span
+                    className={`text-sm font-bold ${scrolled ? "text-slate-dark" : "text-white"}`}
+                  >
+                    {company.phone}
+                  </span>
                 </span>
               </a>
               <button
                 onClick={() => window.dispatchEvent(new Event("toggle-info-drawer"))}
                 aria-label="More information"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-border-light text-slate-dark transition-colors hover:border-purple hover:text-purple"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors ${
+                  scrolled
+                    ? "border-border-light text-slate-dark hover:border-purple hover:text-purple"
+                    : "border-white/30 text-white hover:border-white hover:bg-white/10"
+                }`}
               >
                 <Grip size={18} />
               </button>
@@ -98,7 +118,9 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-bg-soft text-slate-dark lg:hidden"
+              className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden ${
+                scrolled ? "bg-bg-soft text-slate-dark" : "bg-white/15 text-white"
+              }`}
             >
               <Menu size={22} />
             </button>

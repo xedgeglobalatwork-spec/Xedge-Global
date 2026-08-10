@@ -1,9 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function CaseStudyCard({ study }) {
   return (
-    <div className="group relative h-80 overflow-hidden rounded-2xl">
+    <Link
+      href={`/case-studies/${study.slug}`}
+      className="group relative block h-80 overflow-hidden rounded-2xl"
+    >
       <Image
         src={study.image}
         alt={study.title}
@@ -22,6 +26,6 @@ export default function CaseStudyCard({ study }) {
       <span className="absolute top-5 right-5 flex h-10 w-10 -translate-y-2 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <ArrowUpRight size={18} />
       </span>
-    </div>
+    </Link>
   );
 }

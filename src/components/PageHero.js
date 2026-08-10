@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
@@ -8,8 +7,17 @@ import { ChevronRight } from "lucide-react";
 export default function PageHero({ title, breadcrumb, image = "/images/page-hero.jpg" }) {
   return (
     <section className="relative overflow-hidden bg-navy-midnight pt-40 pb-24 md:pt-48 md:pb-28">
-      <Image src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-midnight/95 via-navy-midnight/90 to-navy-midnight" />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={image}
+        className="absolute inset-0 h-full w-full object-cover opacity-45"
+      >
+        <source src="https://themeht.com/video/bizfic1-new.webm" type="video/webm" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-midnight/75 via-navy-midnight/65 to-navy-midnight/90" />
       <div className="relative mx-auto max-w-[1280px] px-5 text-center md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

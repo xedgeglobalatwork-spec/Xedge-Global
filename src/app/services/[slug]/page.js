@@ -1,13 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Landmark, Check, ArrowRight } from "lucide-react";
+import { Landmark, Check } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
 import FeatureQuadCard from "@/components/FeatureQuadCard";
 import ROICalculator from "@/components/ROICalculator";
 import FAQAccordion from "@/components/FAQAccordion";
-import Button from "@/components/Button";
+import ServiceSidebar from "@/components/ServiceSidebar";
 import { services, getServiceBySlug } from "@/data/services";
 
 export function generateStaticParams() {
@@ -38,43 +37,7 @@ export default async function ServiceDetailPage({ params }) {
           <div className="grid gap-14 lg:grid-cols-[1fr_2.2fr]">
             {/* Sidebar */}
             <Reveal className="order-2 lg:order-1" y={30}>
-              <div className="sticky top-32 space-y-8">
-                <div className="rounded-2xl border border-border-light p-6">
-                  <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-light">
-                    All Services
-                  </h4>
-                  <ul className="space-y-1">
-                    {services.map((s) => (
-                      <li key={s.slug}>
-                        <Link
-                          href={`/services/${s.slug}`}
-                          className={`flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
-                            s.slug === service.slug
-                              ? "bg-purple text-white"
-                              : "text-slate-body hover:bg-bg-soft"
-                          }`}
-                        >
-                          {s.shortName}
-                          <ArrowRight size={14} />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl bg-gradient-to-br from-navy to-purple p-7 text-white">
-                  <h4 className="text-lg font-bold">
-                    Think You&apos;d Be a Good Fit For Our Team?
-                  </h4>
-                  <p className="mt-2 text-sm text-white/70">
-                    We&apos;re always looking for chartered accountants and advisors who want
-                    partner-track growth.
-                  </p>
-                  <Button href="/contact" variant="white" className="mt-6 !px-5 !py-3 text-xs">
-                    Get In Touch
-                  </Button>
-                </div>
-              </div>
+              <ServiceSidebar activeSlug={service.slug} />
             </Reveal>
 
             {/* Main content */}

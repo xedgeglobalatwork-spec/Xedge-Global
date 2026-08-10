@@ -7,7 +7,7 @@ import ServiceRow from "@/components/ServiceRow";
 import TestimonialCard from "@/components/TestimonialCard";
 import ProcessStepCard from "@/components/ProcessStepCard";
 import MarqueeTicker from "@/components/MarqueeTicker";
-import ContactForm from "@/components/ContactForm";
+import ContactPromo from "@/components/ContactPromo";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import Button from "@/components/Button";
 import { services } from "@/data/services";
@@ -172,31 +172,13 @@ export default function Home() {
       </section>
 
       {/* Consultation form */}
-      <section className="section py-24 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-5 md:px-8">
-          <div className="grid items-start gap-14 lg:grid-cols-2">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Get Started"
-                title="Schedule an Executive Advisory Session"
-                description="Tell us a little about your business and a senior partner will be in touch within 24 hours to arrange a session."
-                className="mb-0"
-              />
-            </Reveal>
-            <Reveal delay={0.15}>
-              <div className="rounded-2xl border border-border-light bg-bg-soft p-7 md:p-9">
-                <ContactForm />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <ContactPromo />
 
       {/* Case Studies */}
       <section className="section bg-bg-soft py-24 md:py-28">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <SectionHeading
-            eyebrow="Case Studies"
+            // eyebrow="Case Studies"
             title="Case Studies & Advisory Highlights"
             description="A sample of the outcomes our partners have delivered for clients this year."
           />

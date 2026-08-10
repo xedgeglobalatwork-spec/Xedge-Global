@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import StatCounter from "./StatCounter";
@@ -8,16 +7,18 @@ import StatCounter from "./StatCounter";
 export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-midnight pt-32 pb-20">
-      <Image
-        src="/images/hero.jpg"
-        alt="London financial district skyline"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover opacity-30"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-midnight/90 via-navy-midnight/85 to-navy-midnight" />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-midnight via-navy-midnight/70 to-navy-midnight/30" />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/hero.jpg"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      >
+        <source src="https://themeht.com/video/bizfic1-new.webm" type="video/webm" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-midnight/40 via-navy-midnight/28 to-navy-midnight/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-midnight/32 via-navy-midnight/18 to-navy-midnight/5" />
 
       <div className="relative mx-auto w-full max-w-[1280px] px-5 md:px-8">
         <motion.span
