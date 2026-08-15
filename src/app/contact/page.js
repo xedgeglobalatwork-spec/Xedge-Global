@@ -121,7 +121,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-bg-soft py-24 md:py-28">
+      {/* <section className="bg-bg-soft py-24 md:py-28">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <SectionHeading
             eyebrow="Leadership"
@@ -158,7 +158,7 @@ export default function ContactPage() {
             ))}
           </RevealGroup>
         </div>
-      </section>
+      </section> */}
 
       <Reveal>
         <section className="px-5 pt-4 pb-4 md:px-8">

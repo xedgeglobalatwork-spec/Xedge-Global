@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Landmark, TrendingUp } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
 import Button from "@/components/Button";
+import { directors } from "@/data/company";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
+import {  Mail, Phone } from "lucide-react";
 
 export const metadata = {
   title: "About Us — Xedge Global Ltd",
@@ -99,7 +102,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Reveal>
+      {/* <Reveal>
         <section className="px-5 pb-24 md:px-8 md:pb-28">
           <div className="relative mx-auto h-[320px] w-full max-w-[1280px] overflow-hidden rounded-3xl md:h-[420px]">
             <Image
@@ -111,7 +114,48 @@ export default function AboutPage() {
             />
           </div>
         </section>
-      </Reveal>
+      </Reveal> */}
+
+       <section className="bg-bg-soft py-24 md:py-28">
+        <div className="mx-auto max-w-[1280px] px-5 md:px-8">
+          <SectionHeading
+            eyebrow="Leadership"
+            title="Speak Directly to a Director"
+            description="For anything beyond a general enquiry, our directors are directly reachable — no gatekeeping, no call centre."
+          />
+          <RevealGroup className="grid gap-6 sm:grid-cols-2" stagger={0.12}>
+            {directors.map((d) => (
+              <RevealItem key={d.name}>
+                <div className="h-full rounded-2xl border border-border-light bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-purple/30 hover:shadow-[var(--shadow-lg)]">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-purple/10 text-xl font-extrabold text-purple">
+                    {d.name.charAt(0)}
+                  </span>
+                  <h3 className="mt-5 text-lg font-bold text-slate-dark">{d.name}</h3>
+                  <p className="text-sm text-slate-light">{d.role}</p>
+                  <div className="mt-5 space-y-2.5 border-t border-border-light pt-5">
+                    <a
+                      href={d.emailHref}
+                      className="flex items-center gap-2.5 text-sm text-slate-body hover:text-purple"
+                    >
+                      <Mail size={15} className="shrink-0 text-purple" />
+                      {d.email}
+                    </a>
+                    <a
+                      href={d.phoneHref}
+                      className="flex items-center gap-2.5 text-sm text-slate-body hover:text-purple"
+                    >
+                      <Phone size={15} className="shrink-0 text-purple" />
+                      {d.phone}
+                    </a>
+                  </div>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
+      </section>
+
+
     </>
   );
 }

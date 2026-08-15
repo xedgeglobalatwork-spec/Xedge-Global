@@ -1,6 +1,6 @@
 export const testimonials = [
   {
-    name: "Sarah Jenkins",
+    name: "Sarah Hawkins",
     title: "CFO, TechPulse London",
     avatar: "/images/avatar-sarah.jpg",
     rating: 5,
