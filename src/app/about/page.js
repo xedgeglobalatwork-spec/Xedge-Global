@@ -120,7 +120,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <SectionHeading
             eyebrow="Leadership"
-            title="Speak Directly to a Director"
+            title="Speak Directly to Team"
             description="For anything beyond a general enquiry, our directors are directly reachable — no gatekeeping, no call centre."
           />
           <RevealGroup className="grid gap-6 sm:grid-cols-2" stagger={0.12}>
@@ -132,6 +132,13 @@ export default function AboutPage() {
                   </span>
                   <h3 className="mt-5 text-lg font-bold text-slate-dark">{d.name}</h3>
                   <p className="text-sm text-slate-light">{d.role}</p>
+                  <div className="mt-4 space-y-3">
+                    {d.bio.map((paragraph, i) => (
+                      <p key={i} className="text-sm leading-relaxed text-slate-body">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                   <div className="mt-5 space-y-2.5 border-t border-border-light pt-5">
                     <a
                       href={d.emailHref}

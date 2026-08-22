@@ -41,11 +41,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20 md:h-24">
             <Link href="/" className="flex items-center shrink-0">
               <Image
-                src="/logo.png"
+                src="/headerLogo.png"
                 alt="Xedge Global"
                 width={160}
-                height={50}
-                className={`h-9 md:h-11 w-auto object-contain transition-all duration-500 ${
+                height={100}
+                className={`h-16 md:h-16 w-auto object-contain transition-all duration-500 ${
                   scrolled ? "" : "brightness-0 invert"
                 }`}
                 priority

@@ -22,20 +22,29 @@ export const company = {
 
 export const directors = [
   {
-    name: "Aasar",
+    name: "Aasar Mehmood FCCA",
     role: "Director",
     email: "aasar@xedge.co.uk",
     emailHref: "mailto:aasar@xedge.co.uk",
     phone: "+44 7404 252026",
     phoneHref: "tel:+447404252026",
+    bio: [
+      "Chartered Accountant having over 12 years of experience in financial reporting, accounting and financial management. I help businesses with accurate accounts, management reporting, budgeting, forecasting, cash flow and financial compliance.",
+      "With a strong focus on accuracy, reliability and personalised service, I provide practical financial support that helps business owners stay in control of their finances and make informed decisions.",
+    ],
   },
   {
-    name: "Sannan",
+    name: "Sannan Babar FCCA",
     role: "Director",
     email: "sannan@xedge.co.uk",
     emailHref: "mailto:sannan@xedge.co.uk",
     phone: "+44 7438 033911",
     phoneHref: "tel:+447438033911",
+    bio: [
+      "Chartered Accountant with over 10 years of experience across financial reporting, group consolidation, management accounting, budgeting, forecasting, and business partnering. Throughout my career, I have worked within multinational, private equity-backed, and high-growth organisations, delivering accurate financial information that supports strategic decision-making.",
+      "My expertise includes IFRS and UK GAAP reporting, multi-entity consolidations, statutory accounts, audit management, balance sheet governance, cash flow forecasting, and financial analysis.",
+      "I am passionate about improving financial processes, strengthening controls, and turning complex financial data into meaningful insights. Known for my attention to detail and collaborative approach, I work closely with stakeholders across finance and operational teams to drive efficiency and business performance.",
+    ],
   },
 ];
 

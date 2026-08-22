@@ -63,8 +63,8 @@ export default function ServiceSidebar({ activeSlug }) {
         </ul>
       </div>
 
-      <div className="rounded-2xl bg-gradient-to-br from-navy to-purple p-7 text-white">
-        <h4 className="text-lg font-bold">Think You&apos;d Be a Good Fit For Our Team?</h4>
+      <div className="rounded-2xl bg-gradient-to-br from-navy to-purple p-7 ">
+        <h4 className="text-lg font-bold text-white">Think You&apos;d Be a Good Fit For Our Team?</h4>
         <p className="mt-2 text-sm text-white/70">
           We&apos;re always looking for chartered accountants and advisors who want
           partner-track growth.
