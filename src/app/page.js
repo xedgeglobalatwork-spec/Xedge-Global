@@ -175,7 +175,7 @@ export default function Home() {
       <ContactPromo />
 
       {/* Case Studies */}
-      <section className="section bg-bg-soft py-24 md:py-28">
+      {/* <section className="section bg-bg-soft py-24 md:py-28">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <SectionHeading
             // eyebrow="Case Studies"
@@ -190,7 +190,7 @@ export default function Home() {
             ))}
           </RevealGroup>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
