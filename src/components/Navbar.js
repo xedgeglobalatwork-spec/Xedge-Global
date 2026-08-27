@@ -154,11 +154,11 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between border-b border-border-light p-6">
                 <Image
-                  src="/logo.png"
+                  src="/headerLogo.png"
                   alt="Xedge Global"
-                  width={130}
-                  height={40}
-                  className="h-8 w-auto object-contain"
+                  width={160}
+                  height={50}
+                  className="h-16 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -191,7 +191,7 @@ export default function Navbar() {
                   href={company.phoneHref}
                   className="flex items-center gap-3 text-sm font-semibold text-slate-dark"
                 >
-                  <Phone size={18} className="text-emerald" /> {company.phone}
+                  {/* <Phone size={18} className="text-emerald" /> {company.phone} */}
                 </a>
                 <Button href="/contact" variant="primary" className="w-full justify-center">
                   Let&apos;s Discuss

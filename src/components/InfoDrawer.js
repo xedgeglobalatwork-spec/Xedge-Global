@@ -57,11 +57,11 @@ export default function InfoDrawer() {
             </button>
 
             <Image
-              src="/logo.png"
+              src="/headerLogo.png"
               alt="Xedge Global"
               width={160}
               height={50}
-              className="mb-6 h-11 w-auto object-contain"
+              className="mb-6 h-16 w-auto object-contain"
             />
 
             <p className="mb-10 text-sm leading-relaxed text-slate-body">

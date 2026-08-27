@@ -33,13 +33,13 @@ export default function FAQPage() {
                 the UK, Europe and the Middle East.
               </p>
 
-              <div className="mt-10 rounded-2xl bg-navy-midnight p-8 text-white">
-                <h4 className="text-lg font-bold">Have a specific tax query?</h4>
+              <div className="mt-10 rounded-2xl bg-gradient-to-br from-navy to-purple p-8 text-white">
+                <h4 className="text-lg font-bold text-white">Have a specific tax query?</h4>
                 <p className="mt-2 text-sm text-white/60">
                   Book a short technical review with a chartered partner — no charge, no
                   obligation.
                 </p>
-                <Button href="/contact" variant="primary" className="mt-6 !px-5 !py-3 text-xs">
+                <Button href="/contact" variant="white" className="mt-6 !px-5 !py-3 text-xs">
                   Schedule Technical Review
                 </Button>
               </div>
