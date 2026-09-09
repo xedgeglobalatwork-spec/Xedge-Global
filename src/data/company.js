@@ -23,7 +23,7 @@ export const company = {
 export const directors = [
   {
     name: "Aasar Mehmood FCCA",
-    role: "Director",
+    role: "Partner",
     email: "aasar@xedge.co.uk",
     emailHref: "mailto:aasar@xedge.co.uk",
     phone: "+44 7404 252026",
@@ -35,15 +35,15 @@ export const directors = [
   },
   {
     name: "Sannan Babar FCCA",
-    role: "Director",
+    role: "Partner",
     email: "sannan@xedge.co.uk",
     emailHref: "mailto:sannan@xedge.co.uk",
     phone: "+44 7438 033911",
     phoneHref: "tel:+447438033911",
     bio: [
-      "Chartered Accountant with over 10 years of experience across financial reporting, group consolidation, management accounting, budgeting, forecasting, and business partnering. Throughout my career, I have worked within multinational, private equity-backed, and high-growth organisations, delivering accurate financial information that supports strategic decision-making.",
-      "My expertise includes IFRS and UK GAAP reporting, multi-entity consolidations, statutory accounts, audit management, balance sheet governance, cash flow forecasting, and financial analysis.",
-      "I am passionate about improving financial processes, strengthening controls, and turning complex financial data into meaningful insights. Known for my attention to detail and collaborative approach, I work closely with stakeholders across finance and operational teams to drive efficiency and business performance.",
+      "Chartered Accountant with over 10 years of experience in financial reporting, management accounting, budgeting, forecasting, and business partnering. I help organisations deliver accurate financial reporting, maintain compliance, and provide insights that support informed decision-making and business growth.",
+      "Passionate about improving financial processes and reporting standards, I work closely with stakeholders to enhance controls, streamline reporting, and drive business performance.",
+      // "I am passionate about improving financial processes, strengthening controls, and turning complex financial data into meaningful insights. Known for my attention to detail and collaborative approach, I work closely with stakeholders across finance and operational teams to drive efficiency and business performance.",
     ],
   },
 ];
